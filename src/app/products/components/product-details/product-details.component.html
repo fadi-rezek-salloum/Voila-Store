@@ -1,0 +1,39 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <img src="http://localhost:8000{{product.image}}" alt="Product" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-12 mt-5 h1 mw-3">
+            <span class="fw-bold">اسم المنتج: </span>
+            {{ product.title }}
+        </div>
+        <div class="col-12 mt-5 h3 mw-3" *ngIf="product.content">
+            <span class="fw-bold">الوصف: </span> 
+            {{ product.content }}
+        </div>
+
+        <div class="col-12 mt-5 h3 mw-3" *ngIf="product.discount > 0">
+            <span class="fw-bold">الحسومات: </span> 
+            {{ product.discount }}
+        </div>
+
+        <div class="col-12 mt-5 h3 mw-3">
+            <span class="fw-bold">في المخزن: </span> 
+            {{ product.quantity }}
+        </div>
+
+        <div class="col-12 mt-5 h3 mw-3">
+            <span class="fw-bold">التقييم: </span> 
+            {{ product.rating }} / 5
+        </div>
+
+        <div class="col-12 mt-5 h3">
+            <div class="row">
+            <div class="col-5">
+                <span class="fw-bold">السعر: </span> 
+                {{ product.price }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+            </div>
+        </div>                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        </div>
+    </div>
+</div>

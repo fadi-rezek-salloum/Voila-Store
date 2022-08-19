@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.home__logo-h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(--color)
+}

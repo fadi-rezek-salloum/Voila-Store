@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <h1 class="mb-5 fw-bold text-center">
+                إنشاء حساب جديد
+            </h1>
+
+            <div class="mb-3">
+                <label for="firstname" class="form-label">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    الاسم
+                </label>
+                <input formControlName="firstname" class="form-control" placeholder="الاسم" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="lastname" class="form-label">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    الكنية
+                </label>
+                <input formControlName="lastname" class="form-control" placeholder="الكنية" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="mobile" class="form-label">
+                    <fa-icon [icon]="faPhoneAlt"></fa-icon>
+                    الهاتف
+                </label>
+                <input formControlName="mobile" class="form-control" placeholder="رقم الهاتف" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                    الإيميل
+                </label>
+                <input formControlName="email" type="email" class="form-control" placeholder="الإيميل" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    <fa-icon [icon]="faLock"></fa-icon>
+                    كلمة المرور
+                </label>
+                <input formControlName="password" type="password" class="form-control" placeholder="كلمة المرور"
+                    required>
+            </div>
+
+            <button class="w-100 btn custom__btn btn-primary" type="submit">
+                <fa-icon [icon]="faUserPlus"></fa-icon>
+                التسجيل
+            </button>
+
+            <div class="text-muted mt-5">
+                لديك حساب؟
+                <a routerLink="/login">
+                    سجل دخولك هنا...
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

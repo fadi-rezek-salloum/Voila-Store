@@ -1,0 +1,15 @@
+.card__text {
+    text-decoration: none !important;
+    color: var(--color)
+}
+
+.store__open-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    background: var(--color);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+}

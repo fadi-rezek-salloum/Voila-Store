@@ -1,0 +1,83 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="fw-bold">
+                إضافة متجر
+            </h1>
+        </div>
+        <div class="col-12 mt-3" *ngIf="success">
+            <div class="alert alert-success">
+                <fa-icon [icon]="faCheckCircle"></fa-icon>
+                لقد تمت عملية الإضافة بنجاح!
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+            <form enctype="multipart/form-data" [formGroup]="storeForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        إيميل صاحب المتجر
+                    </label>
+                    <input type="email" formControlName="email" name="email" class="form-control" placeholder="الإيميل..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">
+                        نوع الخدمة
+                    </label>
+                    <input type="text" formControlName="category" name="category" class="form-control" placeholder="نوع الخدمة..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">
+                        اسم المتجر
+                    </label>
+                    <input type="text" formControlName="name" name="name" class="form-control" placeholder="اسم المتجر..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">
+                        صورة المتجر
+                    </label>
+                    <input type="file" formControlName="image" name="image" class="form-control" (change)="onFileChange($event)" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">
+                        عنوان المتجر
+                    </label>
+                    <input type="text" formControlName="address" name="address" class="form-control" placeholder="عنوان المتجر..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city" class="form-label">
+                        المدينة
+                    </label>
+                    <input type="text" formControlName="city" name="city" class="form-control" placeholder="المدينة..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="rating" class="form-label">
+                        التقييم
+                    </label>
+                    <input type="text" formControlName="rating" name="rating" class="form-control" placeholder="التقييم..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="open_at" class="form-label">
+                        وقت الفتح
+                    </label>
+                    <input type="time" formControlName="open_at" name="open_at" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="close_at" class="form-label">
+                        وقت الإغلاق
+                    </label>
+                    <input type="time" formControlName="close_at" name="close_at" class="form-control" required>
+                </div>
+
+                <input type="submit" value="إضافة" class="btn btn-danger w-100 mt-3">
+            </form>
+        </div>
+    </div>
+</div>

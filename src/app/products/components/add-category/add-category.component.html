@@ -1,0 +1,33 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="fw-bold">
+                إضافة نوع خدمة
+            </h1>
+        </div>
+        <div class="col-12 mt-3" *ngIf="success">
+            <div class="alert alert-success">
+                <fa-icon [icon]="faCheckCircle"></fa-icon>
+                لقد تمت عملية الإضافة بنجاح!
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+            <form enctype="multipart/form-data" [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="title" class="form-label">
+                        نوع الخدمة
+                    </label>
+                    <input type="text" formControlName="title" name="title" class="form-control" placeholder="نوع الخدمة..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">
+                        صورة الخدمة
+                    </label>
+                    <input type="file" formControlName="image" name="image" class="form-control" (change)="onFileChange($event)" required>
+                </div>
+                <input type="submit" value="إضافة" class="btn btn-danger w-100 mt-3">
+            </form>
+        </div>
+    </div>
+</div>

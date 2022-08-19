@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+}
+
+.navbar-brand > span {
+    font-size: 1.3rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.navbar__toggler-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.navbar-nav a {
+    color: var(--color);
+    transition: all .4s ease-in-out;
+}
+
+.navbar-nav a:hover {
+    color: var(--hover);
+}
+
+.navbar__cart-link > fa-icon{
+    color: var(--color);
+    border: 1px solid var(--color);
+    padding: 2px 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.navbar__cart-link:hover > fa-icon {
+    background: var(--gradient);
+    color: #fff;
+}
+
+.navbar__cart-badge {
+    vertical-align: top;
+    padding: 6px 5px;
+}

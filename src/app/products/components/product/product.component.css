@@ -1,0 +1,42 @@
+.card {
+    min-width: 180px !important;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card__text {
+    text-decoration: none !important;
+    color: var(--color)
+}
+
+.card__footer-price {
+    background: var(--color);
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.card__footer-div {
+    text-align: left;
+}
+
+.card__footer-cart {
+    font-size: 1.4rem;
+    color: var(--color);
+    cursor: pointer;
+}
+
+.card__footer-button {
+    font-size: 1.2rem;
+    background: var(--color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.old_price {
+    text-decoration: line-through;
+}

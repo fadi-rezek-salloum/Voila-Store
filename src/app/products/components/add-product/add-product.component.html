@@ -1,0 +1,84 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="fw-bold">
+                إضافة منتج
+            </h1>
+        </div>
+        <div class="col-12 mt-3" *ngIf="success">
+            <div class="alert alert-success">
+                <fa-icon [icon]="faCheckCircle"></fa-icon>
+                لقد تمت عملية الإضافة بنجاح!
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+            <form enctype="multipart/form-data" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="store" class="form-label">
+                        المتجر
+                    </label>
+                    <input type="text" formControlName="store" name="store" class="form-control" placeholder="المتجر..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">
+                        اسم المنتج
+                    </label>
+                    <input type="text" formControlName="title" name="title" class="form-control" placeholder="اسم المنتج..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">
+                        السعر
+                    </label>
+                    <input type="text" formControlName="price" name="price" class="form-control" placeholder="السعر..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">
+                        صورة المنتج
+                    </label>
+                    <input type="file" formControlName="image" name="image" class="form-control" (change)="onFileChange($event)" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="discount" class="form-label">
+                        الحسم
+                    </label>
+                    <input type="number" min="0" max="100" formControlName="discount" name="discount" class="form-control" placeholder="الحسم..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">
+                        الكمية في المخزن
+                    </label>
+                    <input type="number" formControlName="quantity" name="quantity" class="form-control" placeholder="الكمية في المخزن..." required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="content" class="form-label">
+                        وصف المنتج
+                    </label>
+                    <textarea formControlName="content" name="content" class="form-control" placeholder="وصف المنتج..." required>
+                    </textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="rating" class="form-label">
+                        التقييم
+                    </label>
+                    <input type="number" min="0" max="5" formControlName="rating" name="rating" class="form-control" placeholder="التقييم..." required>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <label for="featured" class="form-check-label">
+                        هل تريد أن تجعل هذا المنتج من المنتجات المميزة؟
+                    </label>
+                    <input type="checkbox" formControlName="featured" name="featured" class="form-check-input">
+                </div>
+
+                <input type="submit" value="إضافة" class="btn btn-danger w-100 mt-3">
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="fw-bold">
+        المتاجر
+    </h1>
+    <div class="row mt-4">
+        <div class="col-12 px-4">
+            <select class="form-select" (change)="filterCity($event)">
+                <option value="all" selected>-- الكل --</option>
+                <option value="homs">حمص</option>
+                <option value="hama">حماه</option>
+                <option value="aleppo">حلب</option>
+                <option value="damascus">دمشق</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 px-5" *ngFor="let store of stores">
+            <a routerLink="/stores/{{store.id}}/products" class="card__text">
+                <div class="card shadow rounded">
+                    <span *ngIf="store.is_opened == 'True'" class="store__open-badge">
+                        مفتوح
+                    </span>
+                    <span *ngIf="store.is_opened == 'False'" class="store__open-badge">
+                        مغلق
+                    </span>
+                    <img class="card-img-top" src="http://localhost:8000{{store.image}}" alt="Store">
+                    <div class="card-body">
+                        <div class="card-title text-center fw-bold">
+                            {{ store.name }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.carousel__a {
+    text-decoration: none !important;
+}
+
+.carousel__div {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.carousel__div > div {
+    text-align: center;
+}
+
+.carousel__div > div > p {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgb(0,0,0);
+    font-size: 1.6rem;
+    padding-top: 4.7rem;
+}

@@ -1,0 +1,56 @@
+<div class="container-fluid my-5">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="fw-bold">
+                أنواع المتاجر
+            </h2>
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-template carouselSlide *ngFor="let category of categories">
+                    <a owlRouterLink="/stores/{{category.id}}" class="carousel__a">
+                        <div class="carousel__div shadow my-4 rounded"
+                            [style.background]="'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(' + baseURL + category.image + ')'">
+                            <div>
+                                <p>
+                                    {{ category.title }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </ng-template>
+
+            </owl-carousel-o>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="fw-bold">
+                المنتجات المميزة
+            </h2>
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-template carouselSlide *ngFor="let item of featured_products">
+                    <app-product [data]="item" (item)="addToCart($event)"></app-product>
+                </ng-template>
+
+            </owl-carousel-o>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="fw-bold">
+                الحسومات  
+            </h2>
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-template carouselSlide *ngFor="let item of sale_products">
+                    <app-product [data]="item" (item)="addToCart($event)"></app-product>
+                </ng-template>
+
+            </owl-carousel-o>
+        </div>
+    </div>
+
+</div>

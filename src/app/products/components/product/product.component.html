@@ -1,0 +1,36 @@
+<div class="card shadow rounded mb-3 ms-3">
+    <a routerLink="/stores/{{store_id}}/products/details/{{data.id}}" class="card__text">
+    <img class="card-img-top" src="http://localhost:8000{{data.image}}" alt="Store">
+        <div class="card-body">
+            <div class="card-title text-center fw-bold">
+                {{ data.title }}
+                <span *ngIf="data.discount > 0" class="bg-danger text-white rounded ms-2 px-2">
+                    {{ data.discount }}% حسم
+                </span>
+            </div>
+        </div>
+    </a>
+
+    <div class="card-footer d-flex">
+        <div class="w-50 card__footer-price">
+            <fa-icon [icon]="faDollarSign"></fa-icon>
+            <span *ngIf="data.discount > 0">
+                <span class="old_price">{{ data.price }}</span>
+                <span class="mx-1">{{ calculateDiscount(data) }}</span>
+            </span>
+            <span *ngIf="data.discount == 0">
+                {{ data.price }}
+            </span>
+        </div>
+        <div class="w-50 card__footer-div">
+            <fa-icon [icon]="faCartPlus" class="card__footer-cart" *ngIf="!addToggleBtn" (click)="addToggleBtn=true">
+            </fa-icon>
+            <div class="d-flex" *ngIf="addToggleBtn">
+                <input type="number" name="amount" id="amount" min="0" max="{{data.quantity}}" class="form-control" (change)="checkInStock($event)" (keyup)="checkInStock($event)" placeholder="الكمية" [(ngModel)]="amount">
+                <button id="add-{{data.id}}" class="btn card__footer-button" (click)="addToCart($event); addToggleBtn = false">
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
